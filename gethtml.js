@@ -1,5 +1,5 @@
 var http = require('http');
-var gethtml = function(html,callback){
+module.exports = function(html,callback){
 	var response = [];
 	http.get(html,function(res){
 		res.setEncoding('utf8');
@@ -11,5 +11,3 @@ var gethtml = function(html,callback){
 		});
 	});
 };
-
-module.exports = gethtml;
