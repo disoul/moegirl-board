@@ -2,7 +2,7 @@ var gethtml = require('./gethtml.js');
 var htmlparser = require('htmlparser');
 var sys = require('sys');
 var select = require('soupselect').select;
-var getdom = function(name){
+module.exports.getdom = function(name,callback){
 	console.log(name);
 	gethtml('http://zh.moegirl.org/'+name,function(html_str){
 		console.log('DONE!');
@@ -11,14 +11,10 @@ var getdom = function(name){
 				throw err;
 			else {
 				var img_node = select(dom, '.image');
-				img_node.forEach(function(element){
-					console.log(element);
-				});
+				callback(img_node[0]);
 			}
 		});
 		var parser = new htmlparser.Parser(handler);
 		parser.parseComplete(html_str);
 	});
 };
-
-getdom(process.argv[2]);

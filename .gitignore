@@ -1,2 +1,7 @@
 # htmlparse
 /node-htmlparser/
+
+# gulp
+/node_modules/
+package.json
+gulpfile.js
