@@ -4,7 +4,7 @@ var sys = require('sys');
 var select = require('soupselect').select;
 module.exports.getdom = function(name,callback){
 	console.log(name);
-	gethtml('http://zh.moegirl.org/'+name,function(html_str){
+	gethtml('http://zh.moegirl.org/'+encodeURI(name),function(html_str){
 		console.log('DONE!');
 		var handler = new htmlparser.DefaultHandler(function (err, dom){
 			if (err)
