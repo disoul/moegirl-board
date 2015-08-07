@@ -41,22 +41,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin: 0; }
 
 .main-content {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-align-content: flex-start;
-  align-content: flex-start;
-  height: 980px;
-  margin: auto; }
+  width: 980px; }
 .main-content .girl-block {
   width: 250px;
   background-color: #DEEDE0;
   margin-top: 2px;
   margin-left: 5px; }
 .main-content .girl-block img {
-  max-width: 100%; }
+  width: 100%; }

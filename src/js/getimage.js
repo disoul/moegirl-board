@@ -6,6 +6,12 @@ function sendGet(name){
 	req.onreadystatechange = function(){
 		if (req.readyState == 4 && req.status == 200){
 			$("#"+name+" img").attr("src",req.responseText);
+			$('.main-content').BlocksIt({
+				numOfCol: 5,
+				offsetX: 8,
+				offsetY: 3,
+				blockElement: '.girl-block'
+			});
 		}
 	}
 }

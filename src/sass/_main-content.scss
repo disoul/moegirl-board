@@ -3,20 +3,21 @@ $main-content-width: 980px;
 $main-content-height: 980px;
 
 .main-content {
-	@include display-flex;
-	@include flex-wrap(wrap);
-	@include flex-direction(column);
-	@include justify-content(center);
-	@include align-content(flex-start);
-	height: $main-content-height;
-	margin: auto;
+	//@include display-flex;
+	//@include flex-wrap(wrap);
+	//@include flex-direction(column);
+	//@include justify-content(center);
+	//@include align-content(flex-start);
+	//height: $main-content-height;
+	//margin: auto;
+	width: $main-content-width;
 	.girl-block {
 		width: 250px;
 		background-color: #DEEDE0;
 		margin-top: 2px;
 		margin-left: 5px;
 		img {
-			max-width: 100%;			
+			width: 100%;			
 		}
 	}
 }
