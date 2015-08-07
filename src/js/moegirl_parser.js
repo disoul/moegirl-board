@@ -11,7 +11,28 @@ module.exports.getdom = function(name,callback){
 				throw err;
 			else {
 				var img_node = select(dom, '.image');
-				callback(img_node[0]);
+				var text_node = select(dom, '.mw-content-ltr > p');
+				
+				//get Text
+				var text = '';
+				function gettext(node){
+					if (node.children != undefined){
+						node.children.forEach(function(element){
+							gettext(element);
+						})
+					}else{
+						text = text + node.data;
+					}
+				}
+				gettext(text_node[0]);
+				console.log(text);
+
+				//get ImgUrl
+				var patt = /(http:[^" ']+)/gi;                                 
+				var img_url = patt.exec(img_node[0].children[0].data)[1]; 
+				console.log(img_url);
+
+				callback(img_url,text);
 			}
 		});
 		var parser = new htmlparser.Parser(handler);

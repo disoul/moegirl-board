@@ -5,7 +5,10 @@ function sendGet(name){
 	req.send();
 	req.onreadystatechange = function(){
 		if (req.readyState == 4 && req.status == 200){
-			$("#"+name+" img").attr("src",req.responseText);
+			reqJson = JSON.parse(req.responseText);
+			$("#"+name+" img").attr("src",reqJson.image);
+			$("#"+name+" .about").append('<p>'+reqJson.text+'</p>');
+			$("#"+name+" .name").append('<p>'+name+'</p>');
 			$('.main-content').BlocksIt({
 				numOfCol: 5,
 				offsetX: 8,
@@ -24,8 +27,11 @@ function getImage(){
 				div.attr("id",name);
 				div.addClass("girl-block");
 				var img = '<img src="../image/loading.gif">';
+				var textDiv = '<div class="text"><div class="name"></div><div class="about"></div></div>'
+
 				$(".main-content").append(div);
 				$("#"+name).append(img);
+				$("#"+name).append(textDiv);
 				sendGet(name);
 			})(data.girls[i].name);			
 		}

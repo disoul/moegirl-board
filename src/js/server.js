@@ -8,11 +8,13 @@ var server = http.createServer(function(request,response){
 			response.end('bad request');
 		}else{
 			var name = url.parse(request.url,true).query['name'];
-			moegirl_parser.getdom(name,function (img_node){
-				var patt = /(http:[^" ']+)/gi;
-				var img_url = patt.exec(img_node.children[0].data)[1];
-				console.log(img_url);
-				response.end(img_url);
+			moegirl_parser.getdom(name,function (img,text){
+				var resJson = {
+					'image': img,
+					'text': text,
+				};
+				response.writeHead(200,{ 'Content-Type': 'application/json' });
+				response.end(JSON.stringify(resJson));
 			});
 		}
 	}else{
