@@ -15,6 +15,14 @@ function sendGet(name){
 				offsetY: 3,
 				blockElement: '.girl-block'
 			});
+			$("#"+name+" .text").css("bottom","-"+$("#"+name+" .about").css("height"));
+			$("#"+name).hover(
+				function(){
+					$("#"+name+" .text").css("bottom","0");
+				},
+				function(){
+					$("#"+name+" .text").css("bottom","-"+$("#"+name+" .about").css("height"));
+			});
 		}
 	}
 }
@@ -32,6 +40,12 @@ function getImage(){
 				$(".main-content").append(div);
 				$("#"+name).append(img);
 				$("#"+name).append(textDiv);
+				$('.main-content').BlocksIt({
+					numOfCol: 5,
+					offsetX: 8,
+					offsetY: 3,
+					blockElement: '.girl-block'
+				});
 				sendGet(name);
 			})(data.girls[i].name);			
 		}
