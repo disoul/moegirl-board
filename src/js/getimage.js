@@ -5,23 +5,35 @@ function sendGet(name){
 	req.send();
 	req.onreadystatechange = function(){
 		if (req.readyState == 4 && req.status == 200){
-			reqJson = JSON.parse(req.responseText);
-			$("#"+name+" img").attr("src",reqJson.image);
-			$("#"+name+" .about").append('<p>'+reqJson.text+'</p>');
-			$("#"+name+" .name").append('<p>'+name+'</p>');
-			$('.main-content').BlocksIt({
-				numOfCol: 5,
-				offsetX: 8,
-				offsetY: 3,
-				blockElement: '.girl-block'
+			
+			var reqJson = JSON.parse(req.responseText),
+			    $img = $("#"+name+" img"),
+				$about = $("#"+name+" .about"),
+				$name = $("#"+name+" .name"),
+				$text = $("#"+name+" .text"),
+				$block = $("#"+name);
+
+			$img.attr("src",reqJson.image);
+			$about.append('<p>'+reqJson.text+'</p>');
+			$name.append('<p>'+name+'</p>');
+			$img.load(function(){
+				$('.main-content').BlocksIt({
+					numOfCol: 5,
+					offsetX: 8,
+					offsetY: 3,
+					blockElement: '.girl-block'
+				});
 			});
-			$("#"+name+" .text").css("bottom","-"+$("#"+name+" .about").css("height"));
+
+			$text.css("bottom","-"+$("#"+name+" .about").css("height"));
+			$block.css("width",$block.css("width"));
+			$block.css("height",$block.css("height"));
 			$("#"+name).hover(
 				function(){
-					$("#"+name+" .text").css("bottom","0");
+					$text.css("bottom","0");
 				},
 				function(){
-					$("#"+name+" .text").css("bottom","-"+$("#"+name+" .about").css("height"));
+					$text.css("bottom","-"+$("#"+name+" .about").css("height"));
 			});
 		}
 	}
@@ -29,7 +41,7 @@ function sendGet(name){
 
 function getImage(){
 	$.getJSON('./js/data.json',function(data){
-		for (var i = 0;i < data.amount;i++){
+		for (var i = 0;i < data.girls.length;i++){
 			(function creatImageBlock(name){
 				var div = $('<div></div>');
 				div.attr("id",name);

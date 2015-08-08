@@ -56,8 +56,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 0 8px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 0 8px;
   box-shadow: rgba(0, 0, 0, 0.6) 0 0 8px; }
+.main-content .girl-block:hover img {
+  width: 105%; }
 .main-content .girl-block img {
-  width: 100%; }
+  width: 100%;
+  transition: width 0.5s ease 0s; }
 .main-content .girl-block .text {
   position: absolute;
   bottom: 0;

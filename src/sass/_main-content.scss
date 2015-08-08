@@ -14,9 +14,13 @@ $main-content-height: 980px;
 		@include box-shadow(rgba(black,0.4) 0 0 5px);
 		&:hover {
 			@include box-shadow(rgba(black,0.6) 0 0 8px);
+			img {
+				width: 105%;
+			}
 		}
 		img {
-			width: 100%;			
+			width: 100%;
+			transition: width 0.5s ease 0s;			
 		}
 		.text {
 			position: absolute;
