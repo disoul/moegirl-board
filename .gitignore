@@ -9,3 +9,6 @@ gulpfile.js
 # Vim
 *.swap
 *.swp
+
+# sass
+.sass-cache/
