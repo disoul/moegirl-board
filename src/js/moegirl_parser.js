@@ -16,13 +16,21 @@ module.exports.getdom = function(name,callback){
 				//get Text
 				var text = '';
 				function gettext(node){
-					if (node.children != undefined){
-						node.children.forEach(function(element){
-							gettext(element);
-						})
-					}else{
-						text = text + node.data;
+					try{
+						var children = node.children;
 					}
+					catch(err){
+						console.log(err);
+						text = text + node.data;
+						return;
+					}
+					if (children == undefined ){
+						text = text + node.data;
+						return;
+					}
+					children.forEach(function(element){
+						gettext(element);
+					});
 				}
 				gettext(text_node[0]);
 				console.log(text);

@@ -18,7 +18,7 @@ var server = http.createServer(function(request,response){
 			});
 		}
 	}else{
-		var path = '../';
+		var path = '..';
 		if (url.parse(request.url,true).pathname == '/') {
 			path = '../html/index.html';
 		}else {

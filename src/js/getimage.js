@@ -23,17 +23,17 @@ function sendGet(name){
 					offsetY: 3,
 					blockElement: '.girl-block'
 				});
-			});
 
-			$text.css("bottom","-"+$("#"+name+" .about").css("height"));
-			$block.css("width",$block.css("width"));
-			$block.css("height",$block.css("height"));
-			$("#"+name).hover(
-				function(){
-					$text.css("bottom","0");
-				},
-				function(){
-					$text.css("bottom","-"+$("#"+name+" .about").css("height"));
+				$text.css("bottom","-"+$("#"+name+" .about").css("height"));
+				$block.css("width",$block.css("width"));
+				$block.css("height",$block.css("height"));
+				$("#"+name).hover(
+					function(){
+						$text.css("bottom","0");
+					},
+					function(){
+						$text.css("bottom","-"+$("#"+name+" .about").css("height"));
+				});
 			});
 		}
 	}
