@@ -10,15 +10,4 @@
 实现页面效果，下一步为增加在线编辑的功能   
 
 ## 使用（现阶段）
-
-```shell
-git clone http://github.com/disoul/moegirl-board.git
-npm install htmlparser
-npm install soupselect
-cd ./src/js
-node server.js
-```
-之后浏览器访问127.0.0.1:9000   
-点击按钮生成
-女神列表位于js目录data.json文件中  
-
+访问<a href="http://disoul.me:9000">测试页面</a>
