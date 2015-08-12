@@ -1,0 +1,32 @@
+@import "compass/css3";
+
+header{
+	position: fixed;
+	width: 100%;
+	background-color: $green-3;
+	height: 60px;
+	@include box-shadow(rgba(black,0.4) 0 0 5px);
+	.logo {
+		font-size: 40px;
+		text-align: center;
+		color: white;
+		padding: 10px;
+	}
+	.button {
+		margin: auto;
+		text-align: center;
+		overflow: hidden;
+		width: 100%;
+		img {
+			background-color: $green-3;
+			z-index: -1;
+			@include box-shadow(rgba(black,0.4) 0 0 5px);
+			@include border-corner-radius(bottom,left,5px);
+			@include border-corner-radius(bottom,right,5px);
+			cursor: pointer;
+			&:hover {
+				@include box-shadow(rgba(black,0.7) 0 0 7px);
+			}
+		}
+	}
+}

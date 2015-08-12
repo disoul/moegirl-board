@@ -20,7 +20,7 @@ var server = http.createServer(function(request,response){
 	}else{
 		var path = '..';
 		if (url.parse(request.url,true).pathname == '/') {
-			path = '../html/index.html';
+			path = '../html/home.html';
 		}else {
 			path = path + url.parse(request.url,true).pathname;
 		}
