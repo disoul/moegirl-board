@@ -4,7 +4,7 @@ var sys = require('sys');
 var select = require('soupselect').select;
 module.exports.getdom = function(name,callback){
 	console.log(name);
-	gethtml('http://zh.moegirl.org/'+encodeURI(name),function(html_str){
+	function htmlcallback(html_str){
 		console.log('DONE!');
 		var handler = new htmlparser.DefaultHandler(function (err, dom){
 			if (err)
@@ -12,38 +12,56 @@ module.exports.getdom = function(name,callback){
 			else {
 				var img_node = select(dom, '.image');
 				var text_node = select(dom, '.mw-content-ltr > p');
-				
-				//get Text
-				var text = '';
-				function gettext(node){
-					try{
-						var children = node.children;
-					}
+			}
+			while (text_node[0] == undefined || img_node[0] == undefined){
+				console.log('try');
+				gethtml('http://zh.moegirl.org/'+encodeURI(name),htmlcallback);
+				return;
+			}
+
+			//get Text
+			var text = '';
+			function gettext(node){
+				try{
+					var children = node.children;
+				}
 					catch(err){
 						console.log(err);
-						text = text + node.data;
+						try{
+							text = text + node.data;
+						}
+						catch(err){
+							console.error(err);
+						}
 						return;
 					}
-					if (children == undefined ){
-						text = text + node.data;
-						return;
-					}
-					children.forEach(function(element){
-						gettext(element);
-					});
+				if (children == undefined ){
+					text = text + node.data;
+					return;
 				}
-				gettext(text_node[0]);
-				console.log(text);
-
-				//get ImgUrl
-				var patt = /(http:[^" ']+)/gi;                                 
-				var img_url = patt.exec(img_node[0].children[0].data)[1]; 
-				console.log(img_url);
-
-				callback(img_url,text);
+				children.forEach(function(element){
+					gettext(element);
+				});
 			}
+			gettext(text_node[0]);
+			console.log(text);
+	
+			//get ImgUrl
+			var patt = /(http:[^" ']+)/gi;                                 
+			try{
+				var img_url = patt.exec(img_node[0].children[0].data)[1]; 
+			}
+			catch(err){
+				console.log(img_node);
+				console.error(err);
+			}
+			console.log(img_url);
+
+			callback(img_url,text);
 		});
 		var parser = new htmlparser.Parser(handler);
 		parser.parseComplete(html_str);
-	});
+	};
+	gethtml('http://zh.moegirl.org/'+encodeURI(name),htmlcallback);
+
 };
