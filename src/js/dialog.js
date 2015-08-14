@@ -4,7 +4,15 @@ $(document).ready(function(){
 	});
 
 	$(".add").click(function(){
-		var inputNode = '名称 <input name="name" type="text"/>';
+		var inputNode = '名称 <input class="name" name="name" type="text"/>';
 		$(".data").append(inputNode);	
+	});
+
+	$(".exit").click(function(){
+		$(".dialog-bg").fadeOut();
+	});
+
+	$(".commit").click(function(){
+		commit();
 	});
 });

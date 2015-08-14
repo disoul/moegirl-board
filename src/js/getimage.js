@@ -1,3 +1,5 @@
+var column = 5;
+
 function sendGet(name){
 	var req = new XMLHttpRequest();
 	req.open("GET","http://127.0.0.1:9000/getimage?name="+name,true);
@@ -18,7 +20,7 @@ function sendGet(name){
 			$name.append('<p>'+name+'</p>');
 			$img.load(function(){
 				$('.main-content').BlocksIt({
-					numOfCol: 5,
+					numOfCol: column,
 					offsetX: 8,
 					offsetY: 3,
 					blockElement: '.girl-block'
@@ -40,7 +42,11 @@ function sendGet(name){
 }
 
 function getImage(){
-	$.getJSON('../js/data.json',function(data){
+	$('button').hide();
+	var data = JSON.parse($.cookie("girls"));
+	column = data.column;
+	$('.main-content').css('width',data.width);
+	function addDom(data){
 		for (var i = 0;i < data.girls.length;i++){
 			(function creatImageBlock(name){
 				var div = $('<div></div>');
@@ -53,7 +59,7 @@ function getImage(){
 				$("#"+name).append(img);
 				$("#"+name).append(textDiv);
 				$('.main-content').BlocksIt({
-					numOfCol: 5,
+					numOfCol: column,
 					offsetX: 8,
 					offsetY: 3,
 					blockElement: '.girl-block'
@@ -61,5 +67,7 @@ function getImage(){
 				sendGet(name);
 			})(data.girls[i].name);			
 		}
-	});
+	}
+	addDom(data);
 }
+

@@ -4,8 +4,11 @@
 	<meta charset="UTF-8">
 	<title>MoeGirls-Board!</title>
 	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery.cookie.js"></script>
 	<script src="../js/dialog.js"></script>
+	<script src="../js/getjson.js"></script>
 	<link rel="stylesheet" href="../stylesheets/home.css">
+	<link rel="stylesheet" href="../stylesheets/font-awesome.css">
 </head>
 <body>
 <header>
@@ -31,6 +34,7 @@
 				<li>请确保输入的角色名为全名，如输入古河渚（而不是渚），否则有可能会导致查询失败</li>
 				<li>保存网页或者想插入已有网页请使用ctrl+s</li>
 				<li>所有图片和介绍信息均来自萌娘百科网的解析</li>
+				<li>如遇到一些解析错误，可以刷新一波</li>
 			</ul>
 
 		</div>
@@ -42,13 +46,16 @@
 		<h1>开始制作吧！</h1>
 		<form class="data" action="">
 			<h2>属性</h2>
-			宽度 <input name="width" type="text" placeholder="1080"/>
-			列数 <input name="column" type="text" placeholder="4"/>
-			<h2>人物
-				<div class="add">添加角色</div>
-			</h2>
-			名称 <input name="name" type="text"/>
+			宽度 <input class="width" name="width" type="text" placeholder="1080"/>
+			列数 <input class="column" name="column" type="text" placeholder="4"/>
+			<h2>人物</h2>
+			名称 <input class="name" name="name" type="text"/>
 		</form>
+		<div class="exit"><i class="fa fa-times-circle"></i></div>
+		<div class="control">
+			<div class="add"><p><i class="fa fa-plus-circle"></i> 添加角色</p></div>
+			<div class="commit"><p><i class="fa fa-check-circle"></i> 准备完毕</p></div>
+		</div>
 	</div>
 </div>
 </body>

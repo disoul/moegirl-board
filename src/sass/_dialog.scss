@@ -17,8 +17,11 @@
 		@include border-radius(5px);
 		@include box-shadow(rgba(black,0.4) 0 0 5px);
 		margin: 100px auto auto auto;
+		position: relative;
+		padding-bottom: 20px;
 		form {
 			width: 380px;
+			min-height: 386px;
 			margin: auto;
 			input {
 				width: 150px;
@@ -42,18 +45,50 @@
 		}
 		.add {
 			color: white;
+			width: 125px;
 			background-color: $green-3;
 			padding: 5px 10px 5px 10px;
 			font-size: 20px;
-			position: absolute;
-			top: 30px;
-			right: 155px;
 			@include border-radius(5px);
 			@include box-shadow(rgba(black,0.4) 0 0 5px);
+			@include inline-block;
 			cursor: pointer;
 			&:hover {
 				@include box-shadow(rgba(black,0.6) 0 0 5px);
+				font-size: bold;
 			}
 		}
 	}
+}
+
+.commit {
+	font-size: 20px;
+	@include inline-block;
+	width: 125px;
+	color: white;
+	background-color: $green-3;
+	padding: 5px 10px 5px 10px;
+	@include border-radius(5px);
+	@include box-shadow(rgba(black,0.4) 0 0 5px);
+	cursor: pointer;
+	&:hover {
+		@include box-shadow(rgba(black,0.6) 0 0 5px);
+		font-size: bold;
+	}
+}
+
+.exit {
+	font-size: 25px;
+	color: black;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	cursor: pointer;
+	&:hover {
+		color: red;
+	}
+}
+
+.control {
+	margin-left: 230px;
 }

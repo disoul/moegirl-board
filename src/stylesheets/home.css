@@ -158,9 +158,12 @@ header .button img:hover {
   -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
   box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
-  margin: 100px auto auto auto; }
+  margin: 100px auto auto auto;
+  position: relative;
+  padding-bottom: 20px; }
 .dialog-bg .dialog form {
   width: 380px;
+  min-height: 386px;
   margin: auto; }
 .dialog-bg .dialog form input {
   width: 150px;
@@ -179,12 +182,39 @@ header .button img:hover {
   content: url("../image/logo2.png"); }
 .dialog-bg .dialog .add {
   color: white;
+  width: 125px;
   background-color: #008000;
   padding: 5px 10px 5px 10px;
   font-size: 20px;
-  position: absolute;
-  top: 30px;
-  right: 155px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  cursor: pointer; }
+.dialog-bg .dialog .add:hover {
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 0 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0 0 5px;
+  font-size: bold; }
+
+.commit {
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  width: 125px;
+  color: white;
+  background-color: #008000;
+  padding: 5px 10px 5px 10px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -192,10 +222,24 @@ header .button img:hover {
   -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
   box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
   cursor: pointer; }
-.dialog-bg .dialog .add:hover {
+.commit:hover {
   -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 0 5px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 0 5px;
-  box-shadow: rgba(0, 0, 0, 0.6) 0 0 5px; }
+  box-shadow: rgba(0, 0, 0, 0.6) 0 0 5px;
+  font-size: bold; }
+
+.exit {
+  font-size: 25px;
+  color: black;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer; }
+.exit:hover {
+  color: red; }
+
+.control {
+  margin-left: 230px; }
 
 body {
   background-color: #DEEDE0; }
