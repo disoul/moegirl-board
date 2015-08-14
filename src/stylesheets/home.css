@@ -138,5 +138,64 @@ header .button img:hover {
   padding-left: 10px;
   border-left: 5px solid #008000; }
 
+.dialog-bg {
+  display: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; }
+.dialog-bg .dialog {
+  width: 500px;
+  min-height: 500px;
+  max-height: 800px;
+  overflow: auto;
+  background-color: #EDEDED;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  margin: 100px auto auto auto; }
+.dialog-bg .dialog form {
+  width: 380px;
+  margin: auto; }
+.dialog-bg .dialog form input {
+  width: 150px;
+  margin-bottom: 10px; }
+.dialog-bg .dialog h1 {
+  padding: 20px 0 10px 0;
+  text-align: center;
+  font-size: 40px;
+  color: #008000; }
+.dialog-bg .dialog h2 {
+  font-size: 35px;
+  color: #008000;
+  margin-bottom: 10px;
+  position: relative; }
+.dialog-bg .dialog h2:before {
+  content: url("../image/logo2.png"); }
+.dialog-bg .dialog .add {
+  color: white;
+  background-color: #008000;
+  padding: 5px 10px 5px 10px;
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  right: 155px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  cursor: pointer; }
+.dialog-bg .dialog .add:hover {
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 0 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0 0 5px; }
+
 body {
   background-color: #DEEDE0; }

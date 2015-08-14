@@ -4,12 +4,13 @@
 	<meta charset="UTF-8">
 	<title>MoeGirls-Board!</title>
 	<script src="../js/jquery.js"></script>
+	<script src="../js/dialog.js"></script>
 	<link rel="stylesheet" href="../stylesheets/home.css">
 </head>
 <body>
 <header>
 	<div class="logo">MoeGirls-Board!</div>
-	<div class="button">
+	<div class="button start">
 		<img src="../image/moe.png" alt="">
 	</div>
 </header>
@@ -33,6 +34,21 @@
 			</ul>
 
 		</div>
+	</div>
+</div>
+
+<div class="dialog-bg">
+	<div class="dialog">
+		<h1>开始制作吧！</h1>
+		<form class="data" action="">
+			<h2>属性</h2>
+			宽度 <input name="width" type="text" placeholder="1080"/>
+			列数 <input name="column" type="text" placeholder="4"/>
+			<h2>人物
+				<div class="add">添加角色</div>
+			</h2>
+			名称 <input name="name" type="text"/>
+		</form>
 	</div>
 </div>
 </body>

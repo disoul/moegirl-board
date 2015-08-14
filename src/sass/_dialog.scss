@@ -1,0 +1,59 @@
+@import "compass/css3";
+
+.dialog-bg {
+	display: none;
+	background-color: rgba(white,0.5);
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	.dialog {
+		width: 500px;
+		min-height: 500px;
+		max-height: 800px;
+		overflow: auto;
+		background-color: $white-1;
+		@include border-radius(5px);
+		@include box-shadow(rgba(black,0.4) 0 0 5px);
+		margin: 100px auto auto auto;
+		form {
+			width: 380px;
+			margin: auto;
+			input {
+				width: 150px;
+				margin-bottom: 10px;
+			}
+		}
+		h1 {
+			padding: 20px 0 10px 0;
+			text-align: center;
+			font-size: 40px;
+			color: $green-3;
+		}
+		h2 {
+			font-size: 35px;
+			color: $green-3;
+			margin-bottom: 10px;
+			position: relative;
+			&:before {
+				content: url("../image/logo2.png");
+			}
+		}
+		.add {
+			color: white;
+			background-color: $green-3;
+			padding: 5px 10px 5px 10px;
+			font-size: 20px;
+			position: absolute;
+			top: 30px;
+			right: 155px;
+			@include border-radius(5px);
+			@include box-shadow(rgba(black,0.4) 0 0 5px);
+			cursor: pointer;
+			&:hover {
+				@include box-shadow(rgba(black,0.6) 0 0 5px);
+			}
+		}
+	}
+}
