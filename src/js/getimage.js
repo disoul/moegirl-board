@@ -40,7 +40,7 @@ function sendGet(name){
 }
 
 function getImage(){
-	$.getJSON('./js/data.json',function(data){
+	$.getJSON('../js/data.json',function(data){
 		for (var i = 0;i < data.girls.length;i++){
 			(function creatImageBlock(name){
 				var div = $('<div></div>');

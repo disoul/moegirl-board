@@ -1,0 +1,66 @@
+@import "compass/css3";
+
+.main-content {
+	width: 980px;
+	margin: auto;
+	padding-top: 120px;
+	.text {
+		font-size: 20px;
+		line-height: 30px;
+		color: $green-3;
+		position: relative;
+		.preview {
+			display: block;
+			text-decoration: none;
+			position: absolute;
+			padding: 0 5px 0 5px;
+			top: 80px;
+			right: 60px;
+			color: white;
+			background-color: $green-3;
+			@include border-radius(5px);
+			@include box-shadow(rgba(black,0.4) 0 0 5px);
+			&:hover{
+				color: white;	
+				@include box-shadow(rgba(black,0.6) 0 0 5px);
+			}
+
+		}
+		a {
+			text-decoration: none;
+			color: $green-2;
+			&:hover {
+				color: $green-3;
+				font-weight: bold;
+			}
+		}
+	}
+	h2 {
+		&:before {
+			content: url('../image/jianjie.png');	
+		}
+		font-size: 50px;
+		color: $green-3;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid $black-1;
+	}
+	.start {
+		background-color: $green-3;
+		color: white;
+		border: 0;
+		@include border-radius(5px);
+		@include box-shadow(rgba(black,0.4) 0 0 5px);
+		cursor: pointer;
+		&:hover {
+			font-weight: bold;
+		}
+
+	}
+	ul {
+		margin-top: 20px;
+		padding-left: 10px;
+		border-left: 5px solid $green-3;
+	}
+}

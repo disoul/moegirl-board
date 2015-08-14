@@ -75,3 +75,68 @@ header .button img:hover {
   -moz-box-shadow: rgba(0, 0, 0, 0.7) 0 0 7px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0 0 7px;
   box-shadow: rgba(0, 0, 0, 0.7) 0 0 7px; }
+
+.main-content {
+  width: 980px;
+  margin: auto;
+  padding-top: 120px; }
+.main-content .text {
+  font-size: 20px;
+  line-height: 30px;
+  color: #008000;
+  position: relative; }
+.main-content .text .preview {
+  display: block;
+  text-decoration: none;
+  position: absolute;
+  padding: 0 5px 0 5px;
+  top: 80px;
+  right: 60px;
+  color: white;
+  background-color: #008000;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px; }
+.main-content .text .preview:hover {
+  color: white;
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 0 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0 0 5px; }
+.main-content .text a {
+  text-decoration: none;
+  color: #A7E4B4; }
+.main-content .text a:hover {
+  color: #008000;
+  font-weight: bold; }
+.main-content h2 {
+  font-size: 50px;
+  color: #008000;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #B7B7B7; }
+.main-content h2:before {
+  content: url("../image/jianjie.png"); }
+.main-content .start {
+  background-color: #008000;
+  color: white;
+  border: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  cursor: pointer; }
+.main-content .start:hover {
+  font-weight: bold; }
+.main-content ul {
+  margin-top: 20px;
+  padding-left: 10px;
+  border-left: 5px solid #008000; }
+
+body {
+  background-color: #DEEDE0; }
