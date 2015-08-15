@@ -241,5 +241,38 @@ header .button img:hover {
 .control {
   margin-left: 230px; }
 
+html, body {
+  height: 100%; }
+
+#layout {
+  clear: both;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin-bottom: -60px; }
+#layout #footer {
+  height: 60px; }
+
+#footer {
+  clear: both;
+  position: relative;
+  height: 60px; }
+
+#footer {
+  background-color: #008000;
+  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0 0 5px; }
+#footer div {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 15px;
+  color: white; }
+#footer div a {
+  text-decoration: none;
+  color: white; }
+#footer div a:hover {
+  color: #A7E4B4; }
+
 body {
   background-color: #DEEDE0; }
