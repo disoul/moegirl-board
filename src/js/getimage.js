@@ -1,6 +1,6 @@
 var column = 5;
 
-function sendGet(name){
+function sendGet(node,name){
 	var req = new XMLHttpRequest();
 	req.open("GET","http://127.0.0.1:9000/getimage?name="+name,true);
 	req.setRequestHeader("Content-Type","text/plain");
@@ -9,11 +9,11 @@ function sendGet(name){
 		if (req.readyState == 4 && req.status == 200){
 			
 			var reqJson = JSON.parse(req.responseText),
-			    $img = $("#"+name+" img"),
-				$about = $("#"+name+" .about"),
-				$name = $("#"+name+" .name"),
-				$text = $("#"+name+" .text"),
-				$block = $("#"+name);
+			    $img = node.find("img"),
+				$about = node.find(".about"),
+				$name = node.find(".name"),
+				$text = node.find(".text"),
+				$block = node;
 
 			$img.attr("src",reqJson.image);
 			$about.append('<p>'+reqJson.text+'</p>');
@@ -26,15 +26,15 @@ function sendGet(name){
 					blockElement: '.girl-block'
 				});
 
-				$text.css("bottom","-"+$("#"+name+" .about").css("height"));
+				$text.css("bottom","-"+$about.css("height"));
 				$block.css("width",$block.css("width"));
 				$block.css("height",$block.css("height"));
-				$("#"+name).hover(
+				$block.hover(
 					function(){
 						$text.css("bottom","0");
 					},
 					function(){
-						$text.css("bottom","-"+$("#"+name+" .about").css("height"));
+						$text.css("bottom","-"+$about.css("height"));
 				});
 			});
 		}
@@ -56,15 +56,15 @@ function getImage(){
 				var textDiv = '<div class="text"><div class="name"></div><div class="about"></div></div>'
 
 				$(".main-content").append(div);
-				$("#"+name).append(textDiv);
-				$("#"+name).append(img);
+				div.append(textDiv);
+				div.append(img);
 				$('.main-content').BlocksIt({
 					numOfCol: column,
 					offsetX: 8,
 					offsetY: 3,
 					blockElement: '.girl-block'
 				});
-				sendGet(name);
+				sendGet(div,name);
 			})(data.girls[i].name);			
 		}
 	}

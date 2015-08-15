@@ -10,6 +10,7 @@ function commit(){
 	$('.name').each(function(index,element){
 		if ($(this).val() != ''){
 			json.girls.push({'name':$(this).val()});
+			alert($(this).val());
 		}
 	});
 

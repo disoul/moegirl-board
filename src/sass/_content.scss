@@ -17,6 +17,7 @@
 			top: 80px;
 			right: 60px;
 			color: white;
+			cursor: pointer;
 			background-color: $green-3;
 			@include border-radius(5px);
 			@include box-shadow(rgba(black,0.4) 0 0 5px);

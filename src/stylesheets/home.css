@@ -93,6 +93,7 @@ header .button img:hover {
   top: 80px;
   right: 60px;
   color: white;
+  cursor: pointer;
   background-color: #008000;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
