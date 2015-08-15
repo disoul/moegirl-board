@@ -6,10 +6,20 @@ module.exports.getdom = function(name,callback){
 	console.log(name);
 	function htmlcallback(html_str){
 		console.log('DONE!');
+		if (html_str == ''){
+			callback('/image/notfound.jpg','404查询失败(:3..');
+			return;
+		}
 		var handler = new htmlparser.DefaultHandler(function (err, dom){
 			if (err)
 				throw err;
 			else {
+				var isfound = select(dom, '#disambigbox')	
+				console.log(isfound[0]);
+				if (isfound[0] != undefined){
+					callback('/image/notfound.jpg','查询词歧义，查询失败');
+					return;
+				}
 				var img_node = select(dom, '.image');
 				var text_node = select(dom, '.mw-content-ltr > p');
 			}
@@ -47,13 +57,14 @@ module.exports.getdom = function(name,callback){
 			console.log(text);
 	
 			//get ImgUrl
-			var patt = /(http:[^" ']+)/gi;                                 
+			var patt = /src="(http:[^" ']+)/gi;                                 
 			try{
 				var img_url = patt.exec(img_node[0].children[0].data)[1]; 
 			}
 			catch(err){
-				console.log(img_node);
+				console.log(img_node[0].children);
 				console.error(err);
+				img_url = patt.exec(img_node[0].children[1].data)[1];
 			}
 			console.log(img_url);
 
