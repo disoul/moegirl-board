@@ -1,2 +1,7 @@
 @import "global";
+@import "color";
 @import "main-content";
+
+body {
+	background-color: $green-1;
+}

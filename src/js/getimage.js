@@ -56,8 +56,8 @@ function getImage(){
 				var textDiv = '<div class="text"><div class="name"></div><div class="about"></div></div>'
 
 				$(".main-content").append(div);
-				$("#"+name).append(img);
 				$("#"+name).append(textDiv);
+				$("#"+name).append(img);
 				$('.main-content').BlocksIt({
 					numOfCol: column,
 					offsetX: 8,

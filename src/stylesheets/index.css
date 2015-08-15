@@ -42,8 +42,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 .main-content {
   width: 1080px;
-  background-image: url("../image/background.png");
-  background-size: 100% 100%; }
+  background-size: 100% 100%;
+  position: relative;
+  margin: auto; }
 .main-content .girl-block {
   background-color: #DEEDE0;
   margin-top: 2px;
@@ -71,3 +72,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .main-content .girl-block .text .name {
   font-size: 20px;
   margin-bottom: 5px; }
+
+body {
+  background-color: #DEEDE0; }
