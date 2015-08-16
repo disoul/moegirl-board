@@ -4,6 +4,7 @@ var sys = require('sys');
 var select = require('soupselect').select;
 module.exports.getdom = function(name,callback){
 	console.log(name);
+	var trytimes = 0;
 	function htmlcallback(html_str){
 		console.log('DONE!');
 		if (html_str == ''){
@@ -25,6 +26,10 @@ module.exports.getdom = function(name,callback){
 			}
 			while (text_node[0] == undefined || img_node[0] == undefined){
 				console.log('try');
+				trytimes++;
+				if (trytimes > 4){
+					callback('/image/notfound.jpg','查询失败，未知错误')
+				}
 				gethtml('http://zh.moegirl.org/'+encodeURI(name),htmlcallback);
 				return;
 			}
