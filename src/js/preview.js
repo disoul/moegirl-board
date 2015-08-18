@@ -8,7 +8,7 @@ $(document).ready(function(){
 			};
 			json.girls = data.girls;
 			$.cookie('girls',JSON.stringify(json));
-			window.open('http://127.0.0.1:9000/html/index.html');
+			window.open('http://moe.disoul.me/html/index.html');
 		});
 	});
 });

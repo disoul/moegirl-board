@@ -12,3 +12,6 @@ gulpfile.js
 
 # sass
 .sass-cache/
+
+# nohup
+nohup.out

@@ -2,7 +2,7 @@ var column = 5;
 
 function sendGet(node,name){
 	var req = new XMLHttpRequest();
-	req.open("GET","http://127.0.0.1:9000/getimage?name="+name,true);
+	req.open("GET","http://moe.disoul.me/getimage?name="+name,true);
 	req.setRequestHeader("Content-Type","text/plain");
 	req.send();
 	req.onreadystatechange = function(){
