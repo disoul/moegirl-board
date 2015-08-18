@@ -7,10 +7,11 @@ module.exports.getdom = function(name,callback){
 	var trytimes = 0;
 	function htmlcallback(html_str){
 		console.log('DONE!');
-		if (html_str == ''){
-			callback('/image/notfound.jpg','404查询失败(:3..');
-			return;
+		if (html_str == '' || html_str == '404'){
+			console.log(html_str);
+			return callback('/image/notfound.jpg','404查询失败(:3..');
 		}
+		console.log('233');
 		var handler = new htmlparser.DefaultHandler(function (err, dom){
 			if (err)
 				throw err;
@@ -27,7 +28,7 @@ module.exports.getdom = function(name,callback){
 			while (text_node[0] == undefined || img_node[0] == undefined){
 				console.log('try');
 				trytimes++;
-				if (trytimes > 4){
+				if (trytimes > 8){
 					callback('/image/notfound.jpg','查询失败，未知错误')
 				}
 				gethtml('http://zh.moegirl.org/'+encodeURI(name),htmlcallback);
