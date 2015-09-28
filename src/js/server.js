@@ -21,14 +21,14 @@ var server = http.createServer(function(request,response){
 		var path = '..';
 		if (url.parse(request.url,true).pathname == '/') {
 			path = '../html/home.html';
+			fs.readFile(path,function(err,data){
+				if (err)
+					throw err;
+				response.end(data);
+			});
 		}else {
-			path = '..' + url.parse(request.url,true).pathname;
+			response.end('bad request');
 		}
-		fs.readFile(path,function(err,data){
-			if (err)
-				throw err;
-			response.end(data);
-		});
 	}
 });
 
