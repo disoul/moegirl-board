@@ -31,7 +31,7 @@ module.exports.getdom = function(name,callback){
 				if (trytimes > 8){
 					callback('/image/notfound.jpg','查询失败，未知错误')
 				}
-				gethtml('http://zh.moegirl.org/'+encodeURI(name),htmlcallback);
+				gethtml('https://zh.moegirl.org/'+encodeURI(name),htmlcallback);
 				return;
 			}
 
@@ -63,7 +63,7 @@ module.exports.getdom = function(name,callback){
 			console.log(text);
 	
 			//get ImgUrl
-			var patt = /src="(http:[^" ']+)/gi;                                 
+			var patt = /src="(http[s]*:[^" ']+)/gi;                                 
 			try{
 				var img_url = patt.exec(img_node[0].children[0].data)[1]; 
 			}
@@ -79,6 +79,6 @@ module.exports.getdom = function(name,callback){
 		var parser = new htmlparser.Parser(handler);
 		parser.parseComplete(html_str);
 	};
-	gethtml('http://zh.moegirl.org/'+encodeURI(name),htmlcallback);
+	gethtml('https://zh.moegirl.org/'+encodeURI(name),htmlcallback);
 
 };

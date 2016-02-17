@@ -1,7 +1,7 @@
-var http = require('http');
+var https = require('https');
 module.exports = function(html,callback){
 	var response = [];
-	http.get(html,function(res){
+	https.get(html,function(res){
 		if (res.statusCode == 404){
 			callback('404');
 			return;
